@@ -14,6 +14,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+    #response
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    #json decode
+    $data = json_decode($response, true);
+
+    
 
 }
 
